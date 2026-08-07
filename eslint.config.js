@@ -22,4 +22,16 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // Código vendorizado pelo CLI do shadcn/ui: mantido igual ao upstream para
+    // permitir `shadcn add --overwrite` limpo. As duas regras abaixo conflitam
+    // com convenções da própria lib (export de variants/hooks junto do
+    // componente; sync de estado com a instância do embla logo após criá-la),
+    // não indicam bug real neste código gerado.
+    files: ['src/components/ui/**/*.tsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+    },
+  },
 ])
