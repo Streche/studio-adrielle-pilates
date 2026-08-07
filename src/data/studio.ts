@@ -207,7 +207,7 @@ export const nav: NavLink[] = [
 export const seo: Seo = {
   // TODO Fase 11: atualizar para a URL real após o primeiro deploy no Cloudflare Pages.
   siteUrl: 'https://studio-adrielle-pilates.pages.dev',
-  ogImagePath: '/og-image.png',
+  ogImagePath: '/og-image.jpg',
   defaultDescription:
     'Studio Adrielle Ferreira: pilates e fisioterapia em São João de Meriti, RJ. Agende sua aula experimental.',
 }

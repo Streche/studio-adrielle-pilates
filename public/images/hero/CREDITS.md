@@ -11,3 +11,6 @@ Foto de estoque temporária até termos uma foto real do Studio Adrielle Ferreir
 - Baixada em múltiplos tamanhos/formatos via API de imagem do próprio Unsplash
   (`?w=&fm=&q=&fit=crop`) e hospedada localmente (não é hotlink) para manter o
   CSP `img-src 'self'`.
+
+O `og-image.jpg` na raiz de `public/` é um recorte 1200x630 da mesma foto,
+mesma fonte e licença.
