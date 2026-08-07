@@ -2,6 +2,9 @@ import { SkipLink } from '@/components/SkipLink'
 import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/sections/Hero'
+import { About } from '@/sections/About'
+import { Modalities } from '@/sections/Modalities'
+import { Benefits } from '@/sections/Benefits'
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
       <Nav />
       <main id="conteudo">
         <Hero />
+        <About />
+        <Modalities />
+        <Benefits />
       </main>
       <Footer />
     </>
