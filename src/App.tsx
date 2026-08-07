@@ -5,6 +5,8 @@ import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
 import { Modalities } from '@/sections/Modalities'
 import { Benefits } from '@/sections/Benefits'
+import { Testimonials } from '@/sections/Testimonials'
+import { Location } from '@/sections/Location'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <About />
         <Modalities />
         <Benefits />
+        <Testimonials />
+        <Location />
       </main>
       <Footer />
     </>
