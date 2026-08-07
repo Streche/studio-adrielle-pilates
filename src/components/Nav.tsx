@@ -19,8 +19,7 @@ function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8">
         <a
           href="#inicio"
-          className="text-2xl tracking-tight text-foreground"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="font-display text-2xl tracking-tight text-foreground"
         >
           {studio.name}
         </a>

@@ -10,18 +10,14 @@ function Modalities() {
       <div ref={ref} className={isInView ? 'animate-fade-rise' : 'opacity-0'}>
         <h2
           id="modalities-heading"
-          className="text-3xl text-foreground sm:text-4xl"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="font-display text-3xl text-foreground sm:text-4xl"
         >
           Modalidades
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {modalities.map((modality) => (
             <div key={modality.title} className="liquid-glass rounded-2xl p-6">
-              <h3
-                className="text-xl text-foreground"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
+              <h3 className="font-display text-xl text-foreground">
                 {modality.title}
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">

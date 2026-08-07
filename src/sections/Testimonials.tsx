@@ -30,8 +30,7 @@ function Testimonials({ testimonials = realTestimonials }: TestimonialsProps) {
       <div ref={ref} className={isInView ? 'animate-fade-rise' : 'opacity-0'}>
         <h2
           id="testimonials-heading"
-          className="text-3xl text-foreground sm:text-4xl"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="font-display text-3xl text-foreground sm:text-4xl"
         >
           Depoimentos
         </h2>

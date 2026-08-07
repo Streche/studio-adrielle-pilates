@@ -7,12 +7,7 @@ function Footer() {
   return (
     <footer className="border-t border-border px-6 py-10 sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
-        <p
-          className="text-xl text-foreground"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          {studio.name}
-        </p>
+        <p className="font-display text-xl text-foreground">{studio.name}</p>
         <div className="flex items-center gap-6">
           <ExternalLink
             href={studio.instagramUrl}

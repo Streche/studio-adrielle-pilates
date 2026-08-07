@@ -32,8 +32,7 @@ function Benefits() {
       <div ref={ref} className={isInView ? 'animate-fade-rise' : 'opacity-0'}>
         <h2
           id="benefits-heading"
-          className="text-3xl text-foreground sm:text-4xl"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="font-display text-3xl text-foreground sm:text-4xl"
         >
           Benefícios
         </h2>

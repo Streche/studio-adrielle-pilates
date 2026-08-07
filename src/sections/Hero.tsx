@@ -36,8 +36,7 @@ function Hero() {
 
       <h1
         id="hero-heading"
-        className="animate-fade-rise max-w-4xl text-5xl leading-[0.95] font-normal tracking-tight text-foreground sm:text-7xl md:text-8xl"
-        style={{ fontFamily: 'var(--font-display)' }}
+        className="font-display animate-fade-rise max-w-4xl text-5xl leading-[0.95] font-normal tracking-tight text-foreground sm:text-7xl md:text-8xl"
       >
         Transforme seu corpo.{' '}
         <em className="text-muted-foreground not-italic">
