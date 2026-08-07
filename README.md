@@ -1,32 +1,72 @@
-# React + TypeScript + Vite
+# Studio Adrielle Ferreira Pilates
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site estático one-page para o Studio Adrielle Ferreira (pilates + fisioterapia,
+São João de Meriti/RJ). React + Vite + TypeScript + Tailwind CSS v4 + shadcn/ui.
 
-Currently, two official plugins are available:
+## Rodando localmente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev       # http://localhost:5173
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Outros scripts:
+
+```bash
+npm run lint         # ESLint
+npm run typecheck    # tsc --noEmit
+npm test              # Vitest
+npm run build         # build de produção em dist/
+npm run preview       # serve o build localmente
+```
+
+## Estrutura
+
+- `src/data/studio.ts` — fonte única de conteúdo (nome, contato, endereço,
+  benefícios, modalidades, depoimentos). Editar aqui para trocar qualquer
+  texto do site.
+- `src/sections/` — uma seção por arquivo, na ordem em que aparecem na página
+  (Hero, About, Modalities, Benefits, Testimonials, Location).
+- `src/components/` — Nav, Footer e componentes reutilizáveis; `ui/` é código
+  gerado pelo shadcn (ver nota abaixo).
+- `src/hooks/useInView.ts` — anima as seções com fade-rise ao entrar na tela.
+- `public/images/hero/` — foto de fundo do hero (ver `CREDITS.md` na mesma
+  pasta) em 3 formatos × 4 tamanhos.
+- `public/_headers` — headers de segurança HTTP, lidos automaticamente pelo
+  Cloudflare Pages no deploy.
+
+**Nota:** ao editar `og:title`/`og:description`/endereço/telefone em
+`src/data/studio.ts`, atualizar também as tags equivalentes no `<head>` do
+`index.html` (Open Graph, Twitter Card, JSON-LD) — como o site é uma SPA sem
+SSR, crawlers de rede social não executam JS e só leem o HTML estático.
+
+## Pendências de conteúdo
+
+Ver comentários `TODO Fase 0` em `src/data/studio.ts`:
+
+- Foto real do estúdio para o hero (hoje é uma foto de estoque, ver
+  `public/images/hero/CREDITS.md`)
+- Depoimentos de clientes (a seção já existe com um estado vazio honesto até lá)
+
+## Deploy (Cloudflare Pages)
+
+1. Criar um repositório no GitHub e dar push neste projeto.
+2. No dashboard da Cloudflare: **Workers & Pages → Create → Pages → Connect
+   to Git**, selecionar o repositório.
+3. Configuração de build:
+   - Framework preset: `Vite`
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+4. Branch `main` = produção. Pull requests geram preview deploys automáticos
+   em uma URL própria.
+5. **Domínio próprio** (quando disponível): Custom Domains no painel do
+   projeto Cloudflare Pages — TLS é emitido automaticamente. Depois de trocar,
+   atualizar a URL em 3 lugares: `og:url`/`canonical` no `index.html`, `url`
+   no JSON-LD, e `Sitemap:` em `public/robots.txt` (+ `public/sitemap.xml`).
+
+## Qualidade
+
+Mesmo padrão de tooling do portfólio [Streche.github.io](https://streche.github.io):
+ESLint (flat config) + Prettier + Husky + lint-staged + commitlint
+(Conventional Commits) + Vitest/Testing Library, com CI no GitHub Actions
+(`.github/workflows/ci.yml`) rodando lint/typecheck/test/build em cada PR.
