@@ -70,21 +70,21 @@ export interface Seo {
   defaultDescription: string
 }
 
-// TODO Fase 0: confirmar com a Adrielle endereço completo, telefone (E.164) e
-// horário de funcionamento. Sem esses dados o link "ver no mapa" usa uma busca
-// pelo nome/bairro (funcional, mas menos preciso que um endereço exato).
 export const studio: Studio = {
   name: 'Studio Adrielle Ferreira',
   tagline: 'Pilates e fisioterapia para transformar sua rotina',
   whatsappUrl: 'https://wa.me/message/IHHDCSHRV57WE1',
+  whatsappNumberE164: '+5521965321409',
   instagramUrl: 'https://www.instagram.com/studioadrielleferreirapilates/',
   instagramHandle: '@studioadrielleferreirapilates',
+  addressLine: 'R. Panamense, 2 - Quadra 35',
   neighborhood: 'Jardim Meriti',
   city: 'São João de Meriti',
   state: 'RJ',
+  postalCode: '25555-740',
   mapsSearchUrl:
-    'https://www.google.com/maps/search/?api=1&query=Studio+Adrielle+Ferreira+Pilates+Jardim+Meriti+S%C3%A3o+Jo%C3%A3o+de+Meriti+RJ',
-  openingHours: [],
+    'https://www.google.com/maps/search/?api=1&query=R.+Panamense%2C+2+-+Jardim+Meriti%2C+S%C3%A3o+Jo%C3%A3o+de+Meriti+-+RJ%2C+25555-740',
+  openingHours: [{ days: 'Segunda a sábado', hours: '07:00 - 21:00' }],
 }
 
 export const heroContent: HeroContent = {
@@ -92,8 +92,10 @@ export const heroContent: HeroContent = {
   subheadline:
     'Pilates e fisioterapia em um só lugar, com atendimento próximo e personalizado para você recuperar o movimento, aliviar dores e ganhar confiança no seu corpo.',
   ctaLabel: 'Agende sua aula experimental',
-  // TODO Fase 0: trocar pelo alt real depois de escolher a foto do hero.
-  imageAlt: 'Aluna praticando pilates no Studio Adrielle Ferreira',
+  // Foto de estoque temporária (ver public/images/hero/CREDITS.md) — o alt
+  // descreve a imagem real exibida, não afirma ser uma foto do estúdio.
+  // TODO Fase 0-B: trocar pela foto real do estúdio e atualizar este alt.
+  imageAlt: 'Mulher praticando pilates em um reformer',
 }
 
 export const about: About = {
@@ -144,12 +146,26 @@ export const benefits: Benefit[] = [
   },
 ]
 
-// TODO Fase 0: confirmar com a Adrielle as modalidades exatas oferecidas
-// (Solo, Reformer, outros aparelhos) — não inventar equipamento que ela não tem.
 export const modalities: Modality[] = [
   {
-    title: 'Pilates Solo',
-    description: 'Aulas de pilates no solo, com ou sem acessórios.',
+    title: 'Reformer',
+    description:
+      'Aparelho com carrinho deslizante e molas que ajustam a resistência a cada exercício, trabalhando o corpo todo com controle.',
+  },
+  {
+    title: 'Cadillac',
+    description:
+      'Estrutura com barras e molas que permite uma variedade grande de exercícios, do fortalecimento ao alongamento.',
+  },
+  {
+    title: 'Step Chair',
+    description:
+      'Equipamento compacto que desafia equilíbrio, força e controle em movimentos precisos.',
+  },
+  {
+    title: 'Ladder Barrel',
+    description:
+      'Combina escada e barril para trabalhar mobilidade da coluna, alongamento e estabilidade do core.',
   },
   {
     title: 'Fisioterapia',
@@ -173,9 +189,10 @@ export const differentials: Differential[] = [
   },
 ]
 
-// TODO Fase 0: coletar depoimentos reais (com consentimento de uso público —
-// ver nota de LGPD no plano). Propositalmente vazio até então: a seção de
-// depoimentos só deve renderizar quando houver conteúdo real.
+// Confirmado com a cliente: ainda não há depoimentos (2026-08-07). A seção
+// fica com o "local preparado" (id/heading no ar) mas mostra um estado vazio
+// honesto em vez do carrossel enquanto este array estiver vazio — depoimentos
+// só entram aqui com consentimento de uso público (LGPD).
 export const testimonials: Testimonial[] = []
 
 export const nav: NavLink[] = [

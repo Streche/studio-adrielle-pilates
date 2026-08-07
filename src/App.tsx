@@ -1,6 +1,7 @@
 import { SkipLink } from '@/components/SkipLink'
 import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
+import { Hero } from '@/sections/Hero'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <SkipLink />
       <Nav />
       <main id="conteudo">
-        <h1 className="sr-only">Studio Adrielle Ferreira Pilates</h1>
+        <Hero />
       </main>
       <Footer />
     </>
