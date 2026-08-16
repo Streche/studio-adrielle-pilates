@@ -2,13 +2,14 @@ import { MessageCircle } from 'lucide-react'
 import { ExternalLink } from '@/components/ExternalLink'
 import { InstagramIcon } from '@/components/icons/InstagramIcon'
 import { studio } from '@/data/studio'
+import logoUrl from '@/assets/logo.jpg'
 
 function Footer() {
   return (
     <footer className="border-t border-border px-6 py-10 sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
         <img
-          src="/images/logo.jpg"
+          src={logoUrl}
           alt={studio.name}
           width={56}
           height={56}
