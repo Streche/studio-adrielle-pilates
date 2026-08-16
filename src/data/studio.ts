@@ -17,6 +17,8 @@ export interface Studio {
   state: string
   postalCode?: string
   mapsSearchUrl: string
+  /** URL do iframe de embed do Google Maps (formato ?output=embed). */
+  mapsEmbedUrl: string
   geo?: { lat: number; lng: number }
   openingHours: OpeningHoursItem[]
 }
@@ -90,6 +92,8 @@ export const studio: Studio = {
   postalCode: '25555-740',
   mapsSearchUrl:
     'https://www.google.com/maps/search/?api=1&query=R.+Panamense%2C+2+-+Jardim+Meriti%2C+S%C3%A3o+Jo%C3%A3o+de+Meriti+-+RJ%2C+25555-740',
+  mapsEmbedUrl:
+    'https://www.google.com/maps?q=R.+Panamense%2C+2+-+Jardim+Meriti%2C+S%C3%A3o+Jo%C3%A3o+de+Meriti+-+RJ%2C+25555-740&output=embed',
   openingHours: [{ days: 'Segunda a sábado', hours: '07:00 - 21:00' }],
 }
 
