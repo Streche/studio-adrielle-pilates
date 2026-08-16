@@ -11,6 +11,8 @@ export interface Studio {
   whatsappNumberE164?: string
   instagramUrl: string
   instagramHandle: string
+  /** Reel específico exibido na bolha do Instagram (seção Contato). */
+  instagramReelUrl: string
   addressLine?: string
   neighborhood: string
   city: string
@@ -84,6 +86,7 @@ export const studio: Studio = {
   whatsappUrl: 'https://wa.me/message/IHHDCSHRV57WE1',
   whatsappNumberE164: '+5521965321409',
   instagramUrl: 'https://www.instagram.com/studioadrielleferreirapilates/',
+  instagramReelUrl: 'https://www.instagram.com/reel/DYkF6XTum11/',
   instagramHandle: '@studioadrielleferreirapilates',
   addressLine: 'R. Panamense, 2 - Quadra 35',
   neighborhood: 'Jardim Meriti',

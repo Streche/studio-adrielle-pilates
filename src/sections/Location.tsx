@@ -66,20 +66,26 @@ function Location() {
             </div>
           </div>
 
-          <div className="liquid-glass flex flex-col items-start gap-2 rounded-2xl px-5 py-4">
-            <InstagramIcon
-              aria-hidden="true"
-              className="size-6 text-foreground"
-            />
-            <p className="text-foreground">Acompanhe no Instagram</p>
-            <p className="text-sm text-muted-foreground">
-              Veja aulas e bastidores do dia a dia do estúdio.
-            </p>
+          <div className="liquid-glass flex flex-col items-center gap-3 rounded-2xl px-5 py-4">
+            <div className="flex items-center gap-2 self-start text-foreground">
+              <InstagramIcon aria-hidden="true" className="size-5" />
+              <p>Acompanhe no Instagram</p>
+            </div>
+            <div className="w-full max-w-xs overflow-hidden rounded-xl">
+              <iframe
+                src={`${studio.instagramReelUrl}embed`}
+                title={`Vídeo do Instagram do ${studio.name}`}
+                width="100%"
+                height="580"
+                style={{ border: 0 }}
+                loading="lazy"
+              />
+            </div>
             <ExternalLink
-              href={studio.instagramUrl}
-              className="mt-1 text-sm text-foreground underline underline-offset-4"
+              href={studio.instagramReelUrl}
+              className="text-sm text-foreground underline underline-offset-4"
             >
-              Ver vídeo
+              Ver no Instagram
             </ExternalLink>
           </div>
         </div>

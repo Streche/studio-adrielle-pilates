@@ -9,10 +9,12 @@
 # interacoes quebram. script-src continua estrito, sem excecao nenhuma — e a
 # diretiva que realmente importa contra injecao de codigo.
 #
-# frame-src libera só o Google Maps: a seção de Localização embeda um iframe
-# do mapa (google.com/maps?...&output=embed).
+# frame-src libera Google Maps (mapa embutido) e Instagram (reel embutido) —
+# ambos sao iframes de terceiros confiaveis, cada um roda no proprio
+# documento/origem deles, entao nao abre excecao nenhuma no script-src do
+# NOSSO site.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com https://www.instagram.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
