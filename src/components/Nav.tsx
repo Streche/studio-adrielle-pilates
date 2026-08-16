@@ -18,14 +18,17 @@ function Nav() {
       className="sticky top-0 z-40 border-b border-transparent bg-background/70 backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
-        <a href="#inicio" className="shrink-0">
+        <a href="#inicio" className="flex shrink-0 items-center gap-3">
           <img
             src="/images/logo.jpg"
-            alt={studio.name}
-            width={44}
-            height={44}
+            alt=""
+            width={40}
+            height={40}
             className="rounded-lg"
           />
+          <span className="font-display text-2xl tracking-tight text-foreground">
+            {studio.name}
+          </span>
         </a>
 
         <div className="hidden items-center gap-6 lg:flex">
