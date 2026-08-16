@@ -7,7 +7,13 @@ function Footer() {
   return (
     <footer className="border-t border-border px-6 py-10 sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center">
-        <p className="font-display text-xl text-foreground">{studio.name}</p>
+        <img
+          src="/images/logo.jpg"
+          alt={studio.name}
+          width={56}
+          height={56}
+          className="rounded-lg"
+        />
         <div className="flex items-center gap-6">
           <ExternalLink
             href={studio.instagramUrl}

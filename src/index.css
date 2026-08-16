@@ -39,25 +39,27 @@ body {
 }
 
 :root {
-  /* Tema (dark, cinematográfico) — valores especificados no briefing do projeto. */
-  --background: 201 100% 13%;
+  /* Tema (dark, cinematográfico) — verde-sálvia extraído da logo real do
+     estúdio (#909d71, ~HSL 78 18% 53%), no lugar do azul-marinho do
+     briefing original. Ver public/images/logo.jpg. */
+  --background: 78 22% 12%;
   --foreground: 0 0% 100%;
-  --card: 0 0% 10%;
+  --card: 78 10% 15%;
   --card-foreground: 0 0% 100%;
-  --popover: 0 0% 10%;
+  --popover: 78 10% 15%;
   --popover-foreground: 0 0% 100%;
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 4%;
-  --secondary: 0 0% 10%;
+  --primary: 78 18% 53%;
+  --primary-foreground: 78 20% 10%;
+  --secondary: 78 10% 15%;
   --secondary-foreground: 0 0% 100%;
-  --muted: 0 0% 10%;
-  --muted-foreground: 240 4% 66%;
-  --accent: 0 0% 10%;
+  --muted: 78 10% 15%;
+  --muted-foreground: 80 8% 64%;
+  --accent: 78 10% 15%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
-  --border: 0 0% 18%;
-  --input: 0 0% 18%;
-  --ring: 0 0% 100%;
+  --border: 78 8% 22%;
+  --input: 78 8% 22%;
+  --ring: 78 18% 53%;
   --radius: 0.625rem;
 }
 
