@@ -90,14 +90,16 @@ function Location() {
           </div>
         </div>
 
-        <LiquidGlassButton
-          href={studio.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 px-10 py-4"
-        >
-          {heroContent.ctaLabel}
-        </LiquidGlassButton>
+        <div className="mt-10 text-center">
+          <LiquidGlassButton
+            href={studio.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4"
+          >
+            {heroContent.ctaLabel}
+          </LiquidGlassButton>
+        </div>
       </div>
     </Section>
   )
