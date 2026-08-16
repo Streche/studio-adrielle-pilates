@@ -28,11 +28,9 @@ describe('Nav', () => {
     const firstLink = nav[0]
     if (!firstLink) throw new Error('nav deve ter pelo menos um link')
 
-    // Dentro do menu mobile, cada link também fecha o Sheet (via SheetClose
-    // composto no <a>), então o Base UI expõe esse elemento com role="button"
-    // (ação primária: fechar o menu), não role="link".
-    const { getByRole } = within(dialog)
-    const linkInDialog = getByRole('button', { name: firstLink.label })
+    const linkInDialog = within(dialog).getByRole('link', {
+      name: firstLink.label,
+    })
     expect(linkInDialog).toHaveAttribute('href', firstLink.href)
 
     await user.click(linkInDialog)

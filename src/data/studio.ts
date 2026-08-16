@@ -195,8 +195,8 @@ export const differentials: Differential[] = [
 // só entram aqui com consentimento de uso público (LGPD).
 export const testimonials: Testimonial[] = []
 
+// "Início" fica de fora de propósito: a logo já leva pro topo da página.
 export const nav: NavLink[] = [
-  { label: 'Início', href: '#inicio' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Modalidades', href: '#modalidades' },
   { label: 'Benefícios', href: '#beneficios' },

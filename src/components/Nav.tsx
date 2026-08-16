@@ -1,16 +1,17 @@
+import { useState } from 'react'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
 import { LiquidGlassButton } from '@/components/LiquidGlassButton'
 import { nav, studio } from '@/data/studio'
 
 function Nav() {
+  const [open, setOpen] = useState(false)
+
   return (
     <nav
       aria-label="Navegação principal"
@@ -45,40 +46,39 @@ function Nav() {
           Agendar aula
         </LiquidGlassButton>
 
-        <Sheet>
-          <SheetTrigger
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger
             render={
               <Button variant="ghost" size="icon" className="lg:hidden" />
             }
           >
             <Menu aria-hidden="true" />
             <span className="sr-only">Abrir menu</span>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-3/4 gap-8 p-6">
-            <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
-            <div className="mt-8 flex flex-col gap-6">
+          </PopoverTrigger>
+          <PopoverContent align="end" className="w-56">
+            <div className="flex flex-col gap-1">
               {nav.map((item) => (
-                <SheetClose
+                <a
                   key={item.href}
-                  nativeButton={false}
-                  render={
-                    <a href={item.href} className="text-lg text-foreground" />
-                  }
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md px-2 py-1.5 text-sm text-popover-foreground transition-colors hover:bg-foreground/10"
                 >
                   {item.label}
-                </SheetClose>
+                </a>
               ))}
             </div>
             <LiquidGlassButton
               href={studio.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto"
+              onClick={() => setOpen(false)}
+              className="w-full"
             >
               Agende sua aula experimental
             </LiquidGlassButton>
-          </SheetContent>
-        </Sheet>
+          </PopoverContent>
+        </Popover>
       </div>
     </nav>
   )
