@@ -40,16 +40,27 @@ describe('Nav', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 
-  it('CTA points to the real WhatsApp link with a safe rel attribute', () => {
+  it('desktop CTA points to the real WhatsApp link with a safe rel attribute', () => {
     render(<Nav />)
 
-    const ctas = screen.getAllByRole('link', {
+    // Rótulo mais curto na barra fixa (espaço apertado ao lado de 6 links);
+    // o menu mobile usa o texto completo (ver teste abaixo).
+    const cta = screen.getByRole('link', { name: /agendar aula/i })
+    expect(cta).toHaveAttribute('href', studio.whatsappUrl)
+    expect(cta).toHaveAttribute('rel', 'noopener noreferrer')
+  })
+
+  it('mobile menu CTA also points to the real WhatsApp link', async () => {
+    const user = userEvent.setup()
+    render(<Nav />)
+
+    await user.click(screen.getByRole('button', { name: /abrir menu/i }))
+    const dialog = await screen.findByRole('dialog')
+
+    const cta = within(dialog).getByRole('link', {
       name: /agende sua aula experimental/i,
     })
-    expect(ctas.length).toBeGreaterThan(0)
-    for (const cta of ctas) {
-      expect(cta).toHaveAttribute('href', studio.whatsappUrl)
-      expect(cta).toHaveAttribute('rel', 'noopener noreferrer')
-    }
+    expect(cta).toHaveAttribute('href', studio.whatsappUrl)
+    expect(cta).toHaveAttribute('rel', 'noopener noreferrer')
   })
 })
