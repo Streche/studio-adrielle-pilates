@@ -34,6 +34,12 @@ export interface About {
   highlights: string[]
 }
 
+export interface Partnership {
+  name: string
+  /** Ex.: a partir de qual plano do parceiro dá acesso ao estúdio. */
+  detail: string
+}
+
 export type BenefitIcon =
   'heart-pulse' | 'dumbbell' | 'move' | 'stethoscope' | 'activity' | 'sparkles'
 
@@ -102,10 +108,15 @@ export const about: About = {
   heading: 'Sobre a Adrielle',
   paragraphs: [
     'A Adrielle une pilates e fisioterapia em um único acompanhamento: cada aula parte do seu corpo e das suas necessidades, não de uma sequência genérica.',
-    'O atendimento é feito em grupos pequenos, com atenção real a cada aluno, e o estúdio é parceiro Totalpass para facilitar o acesso às aulas.',
+    'O atendimento é feito em grupos pequenos, com atenção real a cada aluno, e o estúdio aceita Totalpass e Wellhub (Gympass) para facilitar o acesso às aulas.',
   ],
-  highlights: ['Pilates clínico', 'Fisioterapia', 'Parceria Totalpass'],
+  highlights: ['Pilates clínico', 'Fisioterapia'],
 }
+
+export const partnerships: Partnership[] = [
+  { name: 'Parceria Totalpass', detail: 'A partir do plano TP2' },
+  { name: 'Parceria Wellhub (Gympass)', detail: 'A partir do plano Silver' },
+]
 
 export const benefits: Benefit[] = [
   {
